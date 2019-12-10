@@ -4,7 +4,7 @@
 #
 Name     : zope.deprecation
 Version  : 4.4.0
-Release  : 2
+Release  : 3
 URL      : https://files.pythonhosted.org/packages/34/da/46e92d32d545dd067b9436279d84c339e8b16de2ca393d7b892bc1e1e9fd/zope.deprecation-4.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/34/da/46e92d32d545dd067b9436279d84c339e8b16de2ca393d7b892bc1e1e9fd/zope.deprecation-4.4.0.tar.gz
 Summary  : Zope Deprecation Infrastructure
@@ -23,12 +23,8 @@ BuildRequires : tox
 BuildRequires : virtualenv
 
 %description
-======================
 ``zope.deprecation``
-======================
-.. image:: https://img.shields.io/pypi/v/zope.deprecation.svg
-:target: https://pypi.python.org/pypi/zope.deprecation/
-:alt: Latest release
+        ======================
 
 %package license
 Summary: license components for the zope.deprecation package.
@@ -58,14 +54,14 @@ python3 components for the zope.deprecation package.
 
 %prep
 %setup -q -n zope.deprecation-4.4.0
+cd %{_builddir}/zope.deprecation-4.4.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571005413
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576017908
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -81,7 +77,7 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
+PYTHONPATH=%{buildroot}$(python -c "import sys; print(sys.path[-1])") python setup.py test
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
