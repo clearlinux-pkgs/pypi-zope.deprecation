@@ -4,7 +4,7 @@
 #
 Name     : zope.deprecation
 Version  : 4.4.0
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/34/da/46e92d32d545dd067b9436279d84c339e8b16de2ca393d7b892bc1e1e9fd/zope.deprecation-4.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/34/da/46e92d32d545dd067b9436279d84c339e8b16de2ca393d7b892bc1e1e9fd/zope.deprecation-4.4.0.tar.gz
 Summary  : Zope Deprecation Infrastructure
@@ -23,8 +23,154 @@ BuildRequires : tox
 BuildRequires : virtualenv
 
 %description
-``zope.deprecation``
-        ======================
+======================
+ ``zope.deprecation``
+======================
+
+.. image:: https://img.shields.io/pypi/v/zope.deprecation.svg
+        :target: https://pypi.python.org/pypi/zope.deprecation/
+        :alt: Latest release
+
+.. image:: https://img.shields.io/pypi/pyversions/zope.deprecation.svg
+        :target: https://pypi.org/project/zope.deprecation/
+        :alt: Supported Python versions
+
+.. image:: https://travis-ci.org/zopefoundation/zope.deprecation.svg?branch=master
+        :target: https://travis-ci.org/zopefoundation/zope.deprecation
+
+.. image:: https://coveralls.io/repos/github/zopefoundation/zope.deprecation/badge.svg?branch=master
+        :target: https://coveralls.io/github/zopefoundation/zope.deprecation?branch=master
+
+.. image:: https://readthedocs.org/projects/zopedeprecation/badge/?version=latest
+        :target: https://zopedeprecation.readthedocs.io/en/latest/
+        :alt: Documentation Status
+
+
+This package provides a simple function called ``deprecated(names, reason)``
+to mark deprecated modules, classes, functions, methods and properties.
+
+Please see https://zopedeprecation.readthedocs.io for the documentation.
+
+
+================================
+ ``zope.deprecation`` Changelog
+================================
+
+4.4.0 (2018-12-03)
+==================
+
+- Add support for Python 3.7.
+
+
+4.3.0 (2017-08-07)
+==================
+
+- Allow custom warning classes to be specified to override the default
+  ``DeprecationWarning``.
+  See https://github.com/zopefoundation/zope.deprecation/pull/7
+
+- Add support for Python 3.6.
+
+- Drop support for Python 3.3.
+
+4.2.0 (2016-11-07)
+==================
+
+- Drop support for Python 2.6 and 3.2.
+
+- Add support for Python 3.5.
+
+4.1.2 (2015-01-13)
+==================
+
+- Do not require a ``self`` parameter for deprecated functions.  See:
+  https://github.com/zopefoundation/zope.deprecation/pull/1
+
+4.1.1 (2014-03-19)
+==================
+
+- Added explicit support for Python 3.4.
+
+4.1.0 (2013-12-20)
+==================
+
+- Added a ``Suppressor`` context manager, allowing scoped suppression of
+  deprecation warnings.
+
+- Updated ``boostrap.py`` to version 2.2.
+
+4.0.2 (2012-12-31)
+==================
+
+- Fleshed out PyPI Trove classifiers.
+
+4.0.1 (2012-11-21)
+==================
+
+- Added support for Python 3.3.
+
+4.0.0 (2012-05-16)
+==================
+
+- Automated build of Sphinx HTML docs and running doctest snippets via tox.
+
+- Added Sphinx documentation:
+
+  - API docs moved from package-data README into ``docs/api.rst``.
+
+  - Snippets can be tested by running 'make doctest'.
+
+- Updated support for continuous integration using ``tox`` and ``jenkins``.
+
+- 100% unit test coverage.
+
+- Added ``setup.py dev`` alias (runs ``setup.py develop`` plus installs
+  ``nose`` and ``coverage``).
+
+- Added ``setup.py docs`` alias (installs ``Sphinx`` and dependencies).
+
+- Removed spurious dependency on ``zope.testing``.
+
+- Dropped explicit support for Python 2.4 / 2.5 / 3.1.
+
+
+3.5.1 (2012-03-15)
+==================
+
+- Revert a move of `README.txt` to unbreak ``zope.app.apidoc``.
+
+
+3.5.0 (2011-09-05)
+==================
+
+- Replaced doctesting with unit testing.
+
+- Python 3 compatibility.
+
+
+3.4.1 (2011-06-07)
+==================
+
+- Removed import cycle for ``__show__`` by defining it in the
+  ``zope.deprecation.deprecation`` module.
+
+- Added support to bootstrap on Jython.
+
+- Fix ``zope.deprecation.warn()`` to make the signature identical to
+  ``warnings.warn()`` and to check for .pyc and .pyo files.
+
+
+3.4.0 (2007-07-19)
+==================
+
+- Release 3.4 final, corresponding to Zope 3.4.
+
+
+3.3.0 (2007-02-18)
+==================
+
+- Corresponds to the version of the ``zope.deprecation`` package shipped as
+  part of the Zope 3.3.0 release.
 
 %package license
 Summary: license components for the zope.deprecation package.
@@ -47,6 +193,7 @@ python components for the zope.deprecation package.
 Summary: python3 components for the zope.deprecation package.
 Group: Default
 Requires: python3-core
+Provides: pypi(zope.deprecation)
 
 %description python3
 python3 components for the zope.deprecation package.
@@ -61,7 +208,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576017908
+export SOURCE_DATE_EPOCH=1582848508
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
