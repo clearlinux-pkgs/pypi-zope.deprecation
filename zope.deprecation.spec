@@ -4,7 +4,7 @@
 #
 Name     : zope.deprecation
 Version  : 4.4.0
-Release  : 20
+Release  : 21
 URL      : https://files.pythonhosted.org/packages/34/da/46e92d32d545dd067b9436279d84c339e8b16de2ca393d7b892bc1e1e9fd/zope.deprecation-4.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/34/da/46e92d32d545dd067b9436279d84c339e8b16de2ca393d7b892bc1e1e9fd/zope.deprecation-4.4.0.tar.gz
 Summary  : Zope Deprecation Infrastructure
@@ -13,12 +13,11 @@ License  : ZPL-2.1
 Requires: zope.deprecation-license = %{version}-%{release}
 Requires: zope.deprecation-python = %{version}-%{release}
 Requires: zope.deprecation-python3 = %{version}-%{release}
-Requires: setuptools
 BuildRequires : buildreq-distutils3
 BuildRequires : pluggy
 BuildRequires : py-python
+BuildRequires : pypi(setuptools)
 BuildRequires : pytest
-BuildRequires : setuptools
 BuildRequires : tox
 BuildRequires : virtualenv
 
@@ -63,15 +62,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1603409574
+export SOURCE_DATE_EPOCH=1641415862
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
