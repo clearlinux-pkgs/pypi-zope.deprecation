@@ -1,5 +1,5 @@
 PKG_NAME := pypi-zope.deprecation
-URL = https://files.pythonhosted.org/packages/34/da/46e92d32d545dd067b9436279d84c339e8b16de2ca393d7b892bc1e1e9fd/zope.deprecation-4.4.0.tar.gz
+URL = https://files.pythonhosted.org/packages/ba/de/a47e434ed1804d82f3fd7561aee5c55914c72d87f54cac6b99c15cbe7f89/zope.deprecation-5.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
