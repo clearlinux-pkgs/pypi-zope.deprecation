@@ -5,7 +5,7 @@
 #
 Name     : pypi-zope.deprecation
 Version  : 5.0
-Release  : 32
+Release  : 33
 URL      : https://files.pythonhosted.org/packages/ba/de/a47e434ed1804d82f3fd7561aee5c55914c72d87f54cac6b99c15cbe7f89/zope.deprecation-5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ba/de/a47e434ed1804d82f3fd7561aee5c55914c72d87f54cac6b99c15cbe7f89/zope.deprecation-5.0.tar.gz
 Summary  : Zope Deprecation Infrastructure
